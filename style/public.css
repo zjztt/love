@@ -3,7 +3,6 @@ body{font-size:16px;-webkit-font-smoothing: antialiased;background:#fff}
 a{-webkit-tap-highlight-color:transparent;text-decoration:none;color:#000;}
 input[type='submit']{-webkit-appearance:none;}
 i{font-style:normal;}
-.head{height:50px;text-align: center;line-height:50px;font-size:18px;background:#e74f7b;color:#fff}
 
 .content{margin:0 auto 60px;}
 .ul{list-style-type: none;overflow:hidden;}
