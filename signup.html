@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<title>用户注册</title>
+	<style>
+		html,body{font-size:16px;animation: bg 10s infinite;-webkit-animation: bg 10s infinite;}
+		#login_form{text-align:center;margin-top:20px}
+		#login_form #telephone,#password,#nickname,#submit{width:90%;height:50px;font-size:16px;padding:0 10px;outline:none;box-sizing:border-box;background:rgba(255,255,255,.3);margin: 6px 0;border: none;font-weight: bolder;color:#fff;border-radius:2px}
+		#login_form #password,#nickname{border-top:none;}
+		#login_form #nickname{margin-bottom:12px}
+		#login_form #submit{background:transparent;color:#fff;margin:16px 0 6px;border:1px solid #dacaca;}
+		input::-webkit-input-placeholder{color:#fff;}
+		label{height:50px;line-height:50px;display:inline-block;width:45%;background:#efefef}
+		.label_male{background:#abcdef;}
+		#login_form .sex{display:none;height:0;width:0;vertical-align:middle;opacity:0;}
+		#login_form .back{
+	    text-align: center;
+	    text-decoration: none;
+	    margin: 20px 10px;
+	    display: inline-block;
+	    color: #fff;
+	    font-size: 16px;
+		}
+		@keyframes bg{
+			0%{background: #CC6666;}
+			30%{background: #009999;}
+			60%{background: #339999;}
+			80%{background: #1E5B79;}
+			100%{background: #CC6666;}
+		}
+		@-webkit-keyframes bg{
+			0%{background:#e74f7b;}
+			30%{background:#009999;}
+			60%{background:#339999;}
+			80%{background:#1e5b79;}
+			100%{background:#e74f7b;}
+		}
+	</style>
+</head>
+<body>
+	<form id="login_form" action="register_handle.php" method="POST">
+		<input type="tel" name="telephone" id='telephone' class="telephone" placeholder="手机号">
+		<input type="password" name="password" id="password" class="password" placeholder="密码">
+		<input type="text" name="nickname" id="nickname" class="nickname" placeholder="昵称">
+		<label class='label_male' for="male">男</label><input type="radio" name="gender" id="male" value="1" class='sex' checked="checked"><input class='sex' type="radio" name="gender" id="female" value="0"/><label class='label_female' for="female">女</label><br>
+		<input type="submit" id="submit" value="注册"><br>
+		<a class="back" onclick="window.history.back()">返回登录</a>
+	</form>
+	<script type="text/javascript">
+		$("#login_form").submit(function(){
+		    var phone = document.getElementById('telephone').value;
+		    var password = document.getElementById('password').value;
+		    var nickname = document.getElementById('nickname').value;
+		    if(!(/^1[3|4|5|7|8]\d{9}$/.test(phone))){ 
+		        alert("手机号码有误，请重填");  
+		        return false;
+		    }
+		    if(password==''){
+		        alert("密码不能为空吧");  
+		        return false; 
+		    }
+		    if(nickname==''){
+		        alert("昵称不能为空吧");  
+		        return false; 
+		    }
+		    if(nickname.length>10){ 
+		        alert("填写昵称过长，请缩短点");  
+		        return false; 
+		    }
+		});
+		$("#male").on("click",function(){
+			$(this).prev("label").css({"background":"#abcdef","color":"#fff"}).siblings("label").css({"background":"#efefef","color":"#000","border":"none"});
+		});
+		$("#female").on("click",function(){
+			$(this).next("label").css({"background":"#c03f3c","color":"#fff"}).siblings("label").css({"background":"#efefef","color":"#000","border":"none"});
+		});
+	</script>
+</body>
+</html>

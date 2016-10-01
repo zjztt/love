@@ -1,0 +1,13 @@
+@charset "utf-8";
+/*首页头像*/
+.content{margin: 0 auto 60px;}
+.content figure{position: relative;}
+.content figure .touxiang_img{width: 100%;max-height: 700px;}
+.content figcaption{position: absolute;bottom: 0px;left: 0px;width: 100%;padding: 10px;
+background: linear-gradient(rgba(255,255,255,0.3),rgba(0,0,0,0.8));}
+.content figcaption h1{font-size: 1.2em; color: #FFFF00;padding-bottom: 6px;height: 32px;line-height: 32px;
+border-bottom: 1px dashed #EFEFEF;}
+.content figcaption .time {color: #ccc;height: 32px;line-height: 32px;}
+.content figcaption .other span{color: #EFEFEF;}
+/*更多图片*/
+.content .more-img img{height: 60px;max-width: 90px;padding:10px 10px 0px 0px}

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<title>全国</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
+	<meta name="format-detection" content="telephone=no">
+	<link rel="stylesheet" type="text/css" href="style/public.css">
+	<script type="text/javascript" src="js/jquery.js"></script>
+</head>
+<body>
+<div class="head">消息</div>
+<div class="content">
+<ul class="ul">
+	
+</ul>
+</div>
+
+<div class="foot"><a href="all.html"><img src="pic/home.png"><i>首页</i></a><a href="city.html"><img src="pic/live.png"><i>同城</i></a><a href="friend.html"><img src="pic/around.png"><i>朋友圈</i></a><a href="message.html"><img src="pic/chat_list1.png"><i>消息</i></a><a href="mine.html"><img src="pic/person.png"><i>我的</i></a></div>
+<script>
+
+	$.ajax({
+		url:'http://hongbaocun.com/m/message.php',
+		type:'get',
+		dataType:'json',
+		success:function(data){
+			for (var i = 0; i < data.length; i++) {
+				a = JSON.parse(data[i]);
+				touxiang = "<img class='touxiang' src='http://hongbaocun.com/m/"+a.touxiang+"'>";
+                nickname= "<p class='nickname'>"+a.nickname+"</p>";
+                time="<p class='time'>"+a.time+"</p>";
+                other="<p class='other'></p>";
+				right = "<div class='right'>"+nickname+time+"</div>";
+				li = "<li class='li_detial'><a class='li_detial_a' href='detial.html?id="+a.id+"'>"+touxiang+right+"</a></li>";
+				
+				$(".ul").append(li);
+				console.log(a.age+a.live+a.education+a.marry);			
+			};
+
+		},error:function(e){
+			console.log(e);
+		}
+	});
+
+</script>
+</body>
+</html>

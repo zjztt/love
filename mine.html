@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<title>个人主页</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
+	<meta name="format-detection" content="telephone=no">
+	<link rel="stylesheet" type="text/css" href="style/public.css">
+	<script type="text/javascript" src="js/jquery.js"></script>
+</head>
+<body>
+<div class="person_head"></div>
+<div class="wrap">
+	<div class="info">
+		<div class="photos" >
+			<div id="uploader-demo">
+			    <a id="fileList" class="uploader-list" href="info.html"><img class="touxiang_img" src=""></a>
+			    <form id='touxiang_form' method="post" enctype="multipart/form-data"> 
+			    	<a class="a-upload">
+			    		<span class='a-upload_text'><img src="pic/camera.png"><span class='change_text'>更换照片</span></span>
+			    		<input class="change_touxiang" type="file" name="file" id="file" accept="image/*" />
+			    	</a>
+			    	<input class="touxiang_submit" type="submit" name="submit" value="确认上传" /> 
+			    </form>
+			</div>
+			<h1 class="realname"></h1>
+		</div>
+	</div>
+	<a href="mine_info.html" class="cate"><img src="pic/info.png"><i>个人资料</i><span class="cate_span"><img src="pic/arrow.png" class="cate_arrow"></span></a>
+	<a class="cate ilikewho" href="ilike.html"><img src="pic/good.png"><span class="cate_span"><img src="pic/arrow.png" class="cate_arrow"></span><i>我喜欢谁</i></a>
+
+	<a class="cate wholikei" href="belike.html"><img src="pic/whogood.png"><span class="cate_span"><img src="pic/arrow.png" class="cate_arrow"></span><i>谁喜欢我</i></a>
+	<div class="break"></div>
+	<a class="cate lucky" href="luck.html"><img src="pic/lucky1.png"><span class="cate_span"><img src="pic/arrow.png" class="cate_arrow"></span><i>缘分</i></a>
+	<a class="cate" href="vip.html"><img src="pic/vip.png"><span class="cate_span"><img src="pic/arrow.png" class="cate_arrow"></span><i>VIP会员(免费送)</i></a>
+	<a class="cate" href="loginout.html"><img src="pic/out.png"><span class="cate_span"><img src="pic/arrow.png" class="cate_arrow"></span><i>退出登录</i></a>
+</div>
+<div class="foot"><a href="all.html"><img src="pic/home.png"><i>首页</i></a><a href="city.html"><img src="pic/live.png"><i>同城</i></a><a href="friend.html"><img src="pic/around.png"><i>朋友圈</i></a><a href="message.html"><img src="pic/chat_list.png"><i>消息</i></a><a href="mine.html"><img src="pic/person1.png"><i>我的</i></a></div>
+<script>
+
+	//上传图片，遮罩层
+	$(".change_touxiang").change(function(){
+		$(".zhe").css("display","block");
+		$(".touxiang_submit").trigger('click');
+	});
+
+
+	//无照片提示
+	// var no_photo = $("#fileList").find("img").attr("src")=='';
+	// if(no_photo){
+	// 	$("#fileList").find("img").attr("src","img/denied.png");
+	// 	$("#fileList").attr("href","#");
+	// 	$(".lucky").find("a").attr("href","");
+	// 	$("#fileList").addClass("no_zhaopian");
+	// 	$(".change_text").text("上传真实照片");
+	// 	$(".lucky").click(function(){
+	// 		alert("请先上传照片");
+	// 		return false;
+	// 	});
+
+	// };
+
+
+	//没有照片，点击图片直接拉起上传图片功能
+	$(".no_zhaopian").click(function(){
+		return $(".change_touxiang").click();
+	});
+
+	//获取照片
+	$.ajax({
+		url:'http://hongbaocun.com/m/mine.php',
+		type:'get',
+		dataType:'json',
+		success:function(data){
+			$(".realname").text(data.realname);
+			$(".touxiang_img").attr('src',data.touxiang);
+		},error:function(e){
+		}
+	});
+</script>
+<div class="zhe" style="display:none;"><h2 style="text-align:center;margin:70% auto;color:#fff">图片正在上传,请勿任何操作</h2></div>
+</body>
+</html>
