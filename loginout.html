@@ -2,9 +2,34 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Document</title>
+	<title>我的账号</title>
+	<link rel="stylesheet" type="text/css" href="style/public.css"/>
+	<style type="text/css">
+		.back{height: 2em; width: 2em;line-height: 2.3em; position: fixed; border-radius: 50%;
+   			 left: 1em;background: rgba(0,0,0,.3);top: 2em;text-align: center;}
+		.back img{width:1em;height:1em}
+		.detial_photos{text-align: center;position:relative;}
+		.detial_photos .touxiang{width:100%;vertical-align:bottom;}
+		.nickname{font-size: 20px; background:linear-gradient(rgba(0,0,0,.1),rgba(0,0, 0, 0.7));
+		 		   bottom: 0;position: absolute;left:0;width:100%; height: 60px;}
+		.nickname a{text-decoration: none;color:#fff;line-height:35px;}
+			.like_num_p{color: #dbb76c;font-size:14px;}
+	</style>
 </head>
 <body>
-	用户退出页面，请制作
+<!--	用户退出页面，请制作-->
+<div class="info_wrap">
+	<div class="detial_photos">
+		<img src="http://hongbaocun.com/m/upload_img/20160929/77482-2016-09-29_15:20:56.jpeg" class="touxiang">
+		<a onclick="window.history.back();" class="back">
+			<img src="img/back.png">
+		</a>
+		<div class="nickname">
+			<a href="#">冷暖自知</a>
+			<p class='like_num_p'><span class="like_num">25</span>个人对你心动</p>
+		</div>
+	</div>
+</div>
+<div></div>
 </body>
 </html>
