@@ -197,7 +197,7 @@
 <div class="head">个人资料</div>
 <div class="wrap">
 	<div class="info">
-		<form class="cateform" action="update.php" method="post">
+		<form class="cateform"  method="post">
 			<p class="info_spec"><span>居住城市</span><input type="text" placeholder="请选择" id="cityChoice" name="live" readonly="readonly" value="<?php echo $live ?>" /></p>
 			<p class="info_spec"><span>昵称</span><input id="nickname" type="text" placeholder="请填写" name="realname" value="<?php echo $realname ?>" /></p>
 			<p class="info_spec"><span>微信号</span><input type="text" placeholder="请填写" name="wechat" id="wechat" value="<?php echo $wechat ?>" /></p>
@@ -351,8 +351,5 @@ $(".cateform").submit(function(){
     });
 
 </script>
-<?php
-include('foot.php');
-?>
 </body>
 </html>

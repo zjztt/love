@@ -25,7 +25,7 @@
 	首页处理：all.php
 	同城处理：city.php
 	朋友圈处理：friend.php
-            发布朋友圈：publish.php
+           发布朋友圈：publish.php
 	消息处理：message.php
 	聊天界面处理：message_room.php
 	我的处理：mine.php
