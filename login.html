@@ -49,6 +49,8 @@
 	</div>
 	<script src="http://libs.baidu.com/jquery/2.1.1/jquery.min.js"></script>
 	<script type="text/javascript">
+	window.onload=function(){
+		var phone='phone';
 		$("#submit").click(function(){
 		    var telephone = $("#telephone").val();
 		    var password = $("#password").val();
@@ -64,7 +66,7 @@
 					success:function(data){
 								//登录成功
 							if (data==1) {
-								checkCookie();
+								setCookie(phone,telephone,60);
 								window.location.href='all.html';
 							} else if(data==2){
 								//账号被封
@@ -85,35 +87,25 @@
 				});
 			}
 		});
-	</script>
-	<script>
-		function setCookie(cname,cvalue,exdays){
-			var d = new Date();
-			d.setTime(d.getTime()+(exdays*24*60*60*1000));
-			var expires = "expires="+d.toGMTString();
-			document.cookie = cname+"="+cvalue+"; "+expires;
+		//用户名存在cookie
+		function setCookie(name,value, iDay){
+			var oDate = new Date();
+			oDate.setDate(oDate.getDate()+iDay);
+			document.cookie=name+'='+value+';expires='+oDate;
 		}
-		function getCookie(cname){
-			var name = cname + "=";
-			var ca = document.cookie.split(';');
-			for(var i=0; i<ca.length; i++) {
-				var c = ca[i].trim();
-				if (c.indexOf(name)==0) return c.substring(name.length,c.length);
+		function getCookie(name){
+			var arr=document.cookie.split('; ');
+			for (var i = 0; i < arr.length; i++) {
+				var arr2=arr[i].split('=');
+				if (arr2[0]==name) {
+					return arr2[1];
+				}
 			}
-			return "";
+			return '';
 		}
-		function checkCookie(){
-			var telephone=getCookie("telephone");
-			if (telephone!=""){
-				alert("Welcome again " + telephone);
-			}
-			else {
-					telephone = $("#telephone").val();
-			    	if (telephone!="" && telephone!=null){
-	    				setCookie("telephone",telephone,30);
-	    			}
-			}
-		}
+		var telephone=document.getElementById('telephone');
+		telephone.value=getCookie('phone');
+	}
 	</script>
 </body>
 </html>
