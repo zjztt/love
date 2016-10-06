@@ -1,6 +1,6 @@
 @charset "utf-8";
-.foot{width: 100%;position:fixed;left:0;bottom:0;text-align: center;z-index:999}
-.foot a{color:#999;font-size:0;border-top:1px solid #eae6e6;text-decoration: none;width:20%;display:inline-block;background:#fff;height:60px}
+.foot{width: 100%;position:fixed;left:0;bottom:0;text-align: center;z-index:999;background:#fff;border-top:1px solid #eae6e6;}
+.foot a{color:#999;font-size:0;text-decoration: none;width:25%;display:inline-block;background:#fff;height:60px}
 .foot a:hover{background:#efefef}
 .foot a img{height:30px;margin:5px 0}
 .foot a i{font-style:normal;display:block;font-size:13px;}
