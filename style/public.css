@@ -1,6 +1,7 @@
 *{margin:0;padding:0;}
-html,body{height:100%;font-size:16px;}
+html,body{font-size:16px;}
 body{-webkit-font-smoothing: antialiased;background:#fff;max-width:700px;margin:0 auto;}
+html,#body{height:100%;}
 @media screen and (min-width:370px) and (max-width:410px){
   html{
     font-size:18px;
