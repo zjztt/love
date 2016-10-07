@@ -1,5 +1,17 @@
 *{margin:0;padding:0;}
-body{font-size:16px;-webkit-font-smoothing: antialiased;background:#fff}
+html,body{height:100%;font-size:16px;}
+body{-webkit-font-smoothing: antialiased;background:#fff;max-width:700px;margin:0 auto;}
+@media screen and (min-width:370px) and (max-width:410px){
+  html{
+    font-size:18px;
+  }
+}
+@media screen and (min-width:411px){
+  html{
+    font-size:20px;
+  }
+}
+
 a{-webkit-tap-highlight-color:transparent;text-decoration:none;color:#000;}
 input[type='submit']{-webkit-appearance:none;}
 i{font-style:normal;}
@@ -8,17 +20,14 @@ i{font-style:normal;}
 .ul{list-style-type: none;overflow:hidden;}
 .ul .li_detial{position:relative;background:#fff;}
 .ul .li_detial_a{display:block;}
-.ul li .touxiang{width:100%;max-height:1000px;}
+.ul li .touxiang{width:100%;max-height:1500px;}
 .ul li .right{position: absolute;left: 0;bottom: 0;width: 100%;padding: 10px;background:linear-gradient(rgba(255,255,255,.3),rgba(0,0,0,.8));}
 .ul li .nickname{font-weight:bold;color:#dbb76c;font-size:1.2em;padding-bottom:6px;border-bottom:1px dashed #efefef;height:32px;line-height:32px}
 .ul li .time{color:#ccc;height:32px;line-height:32px;padding-right:10px}
-.more_photos{margin-top:6px;}
-.user_content_pic{display: inline-block;height:60px;width:60px;overflow:hidden;}
-.user_content_pic img{height:60px;max-width:90px;}
 .ul li .other{color:#efefef;}
 .ul li .new_vip{height:24px;vertical-align:middle;margin-left:2px}
 .page{text-align: center;}
-.pagea{color:#888;width:25%;height:40px;margin:10px 4px;border-radius:4px;font-size:18px;box-sizing:border-box;border:1px solid #ccc;display:inline-block;line-height:40px;text-align: center;text-decoration: none}
+.pagea{color:#888;width:25%;height:40px;margin:10px 4px;border-radius:4px;font-size:1.2rem;box-sizing:border-box;border:1px solid #ccc;display:inline-block;line-height:40px;text-align: center;text-decoration: none}
 
 .big_img{
     display: none;
@@ -37,11 +46,11 @@ i{font-style:normal;}
 
 
 
-/* person.php */
+/* mine.html */
 .wrap{max-width:700px;margin:0 auto 60px;}
 .info{background:linear-gradient(#e74f7b,#e67171)}
 .info .realname{
-  font-size: 24px;
+    font-size:1.6rem;
     display:block;
     color:#fff;
     margin-top:10px;
@@ -70,7 +79,7 @@ height:40px;position: absolute;
 }
 .info .change_touxiang{
     position: absolute;
-    font-size:100px;
+    font-size:6rem;
     right: 0;
     top: 0;
     opacity: 0;
@@ -82,13 +91,13 @@ height:40px;position: absolute;
 .like_num .ilike,.belike{float: left;width:50%;text-align:center;line-height:2rem;color:#fff;box-sizing:border-box;}
 .like_num .belike{border-left:1px solid #e4b2b2;}
 .like_num a{color:#fff}
-.cate{-webkit-user-select:none;display:block;font-size:17px;background:#fff;margin-left:10px;height:50px;line-height:50px;}
+.cate{-webkit-user-select:none;display:block;font-size:1rem;background:#fff;margin-left:.8rem;height:3rem;line-height:3rem;}
 .cate i{color:#333;}
 .cate:after{ content: ''; display:block;height:1px; background-color:#757575; -webkit-transform: scaleY(0.2); transform: scaleY(0.2);}
 .wholikei:after{background-color:#f7f7f7}
-.cate>img{height:25px;vertical-align: middle;margin:0 10px}
-.cate .cate_span{float: right;height:50px;line-height:50px;margin-right:30px;}
-.cate .cate_arrow{height:16px;}
+.cate>img{height:1.8rem;vertical-align: middle;margin:0 .6rem}
+.cate .cate_span{float: right;height:3rem;line-height:3rem;margin-right:2rem;}
+.cate .cate_arrow{height:1rem;}
 .photos{
     padding:1rem;
     position: relative;

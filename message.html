@@ -9,8 +9,9 @@
 	<link rel="stylesheet" type="text/css" href="style/header.css"/>
 	<link rel="stylesheet" type="text/css" href="style/footer.css"/>
 	<script type="text/javascript" src="js/jquery.js"></script>
+	<script type="text/javascript" src="js/hammer.min.js"></script>
 </head>
-<body>
+<body id="body">
 <div class="head">消息</div>
 <div class="content">
 <ul class="ul">
@@ -44,6 +45,16 @@
 		}
 	});
 
+</script>
+<script type="text/javascript">
+var hammertime = new Hammer(document.getElementById('body'));
+hammertime.on('swipeleft', function(ev) {
+	window.location.href="mine.html";
+});
+hammertime.on('swiperight', function(ev) {
+	window.location.href="city.html";
+
+});
 </script>
 </body>
 </html>

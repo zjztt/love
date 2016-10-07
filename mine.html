@@ -9,8 +9,9 @@
 	<link rel="stylesheet" type="text/css" href="style/footer.css"/>
 	<link rel="stylesheet" type="text/css" href="style/header.css"/>
 	<script type="text/javascript" src="js/jquery.js"></script>
+	<script type="text/javascript" src="js/hammer.min.js"></script>
 </head>
-<body>
+<body id="body">
 <div class="person_head"></div>
 <div class="wrap">
 	<div class="info">
@@ -45,6 +46,18 @@
 	<a class="cate" href="loginout.html"><img src="pic/out.png"><span class="cate_span"><img src="pic/arrow.png" class="cate_arrow"></span><i>退出</i></a>
 </div>
 <div class="foot"><a href="all.html"><img src="pic/home.png"><i>首页</i></a><a href="city.html"><img src="pic/live.png"><i>同城</i></a><a href="message.html"><img src="pic/chat_list.png"><i>消息</i></a><a href="mine.html"><img src="pic/person1.png"><i>我的</i></a></div>
+
+<script type="text/javascript">
+var hammertime = new Hammer(document.getElementById('body'));
+hammertime.on('swipeleft', function(ev) {
+	window.location.href="all.html";
+});
+hammertime.on('swiperight', function(ev) {
+	window.location.href="message.html";
+
+});
+</script>
+
 <script>
 
 	//上传图片，遮罩层
@@ -88,5 +101,8 @@
 	});
 </script>
 <div class="zhe" style="display:none;"><h2 style="text-align:center;margin:70% auto;color:#fff">图片正在上传,请勿任何操作</h2></div>
+        <script type="text/javascript" src="cordova.js"></script>
+<script type="text/javascript" src="js/index.js"></script>
+
 </body>
 </html>

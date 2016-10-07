@@ -100,6 +100,9 @@ var app = {
     // function, we must explicitly call 'app.receivedEvent(...);'
     onDeviceReady: function() {
 
+        document.addEventListener("backbutton",function(){
+                navigator.app.exitApp();  
+        });                       
 
     },
 
