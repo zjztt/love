@@ -1,6 +1,0 @@
-@charset "utf-8";
-.foot{width: 100%;position:fixed;left:0;bottom:0;text-align: center;z-index:999;background:#fff;border-top:1px solid #eae6e6;}
-.foot a{color:#999;text-decoration: none;width:25%;display:inline-block;background:#fff;height:4rem}
-.foot a:hover{background:#efefef}
-.foot a img{height:2rem;margin:.3rem 0;}
-.foot a i{font-style:normal;display:block;font-size:1rem;}
