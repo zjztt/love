@@ -198,99 +198,74 @@
 <div class="wrap">
 	<div class="info">
 		<form class="cateform"  method="post">
-			<p class="info_spec"><span>居住城市</span><input type="text" placeholder="请选择" id="cityChoice" name="live" readonly="readonly" value="<?php echo $live ?>" /></p>
-			<p class="info_spec"><span>昵称</span><input id="nickname" type="text" placeholder="请填写" name="realname" value="<?php echo $realname ?>" /></p>
-			<p class="info_spec"><span>微信号</span><input type="text" placeholder="请填写" name="wechat" id="wechat" value="<?php echo $wechat ?>" /></p>
-			<p class="info_spec"><span>职业</span><input type="text" placeholder="请填写"name="occupation" value="<?php echo $occupation ?>" /></p>
+			<p class="info_spec"><span>居住城市</span><input type="text" placeholder="请选择" id="cityChoice" name="live" readonly="readonly" value="" /></p>
+			<p class="info_spec"><span>昵称</span><input id="nickname" type="text" placeholder="请填写" name="realname" value="" /></p>
+			<p class="info_spec"><span>微信号</span><input type="text" placeholder="请填写" name="wechat" id="wechat" value="" /></p>
+			<p class="info_spec"><span>职业</span><input type="text" placeholder="请填写"name="occupation" id="occupation" value="" /></p>
 
 			<div class="info_spec"><span>年龄</span>
 					<select class="age" name="age">
 					  <option selected disabled="true">请选择</option>
-					  <?php
-					  	for ($i=18; $i < 80; $i++) {
-					  		if ($age==$i) {
-						  		echo "<option selected value=".$i.">".$i."岁</option>";
-					  		}else{
-						  		echo "<option value=".$i.">".$i."岁</option>";
-					  		}
-					  	};
-					  ?>
 					</select>
 			</div>
 			<p class="info_spec"><span>婚姻状况</span>
 				<select class="marry" name="marry">
 				  <option selected disabled="true">请选择</option>
-				  <option value ="未婚" <?php if($marry=='未婚'){echo "selected";} ?>>未婚</option>
-				  <option value ="离异" <?php if($marry=='离异'){echo "selected";} ?>>离异</option>
-				  <option value ="丧偶" <?php if($marry=='丧偶'){echo "selected";} ?>>丧偶</option>
+				  <option value ="未婚" >未婚</option>
+				  <option value ="离异" >离异</option>
+				  <option value ="丧偶" >丧偶</option>
 				</select>
 <!-- 			<p class="info_spec"><span>民族</span><input type="text" placeholder="民族" name="nation" value="<?php echo $nation ?>" /></p>
  -->
-			<p class="info_spec"><span>家乡</span><input type="text"  placeholder="请选择" id="oldcityChoice" name="hometown" readonly="readonly" value="<?php echo $hometown ?>" /></p>
+			<p class="info_spec"><span>家乡</span><input type="text"  placeholder="请选择" id="oldcityChoice" name="hometown" readonly="readonly" value="" /></p>
 			<p class="info_spec"><span>学历</span>
 				<select class="education" name="education">
 				  <option selected disabled="true">请选择</option>
-				  <option value ="大专" <?php if($education=='大专'){echo "selected";} ?>>大专</option>
-				  <option value ="本科" <?php if($education=='本科'){echo "selected";} ?>>本科</option>
-				  <option value ="硕士" <?php if($education=='硕士'){echo "selected";} ?>>硕士</option>
-				  <option value ="博士" <?php if($education=='博士'){echo "selected";} ?>>博士</option>
-				  <option value ="高中" <?php if($education=='高中'){echo "selected";} ?>>高中</option>
-				  <option value ="初中" <?php if($education=='初中'){echo "selected";} ?>>初中</option>
+				  <option value ="大专" >大专</option>
+				  <option value ="本科" >本科</option>
+				  <option value ="硕士" >硕士</option>
+				  <option value ="博士" >博士</option>
+				  <option value ="高中" >高中</option>
+				  <option value ="初中" >初中</option>
 				</select>
 			<p class="info_spec"><span>身高</span>
 				<select class="height" name="height">
 				  <option selected disabled="true">请选择</option>
-				  <?php
-				  	for ($ii=140; $ii < 210; $ii++) {
-				  		if ($height==$ii) {
-					  		echo "<option selected value=".$ii.">".$ii."厘米</option>";
-				  		}else{
-					  		echo "<option value=".$ii.">".$ii."厘米</option>";
-				  		}
-				  	};
-				  ?>
 				</select>
 			</p>
 			<p class="info_spec"><span>体重</span>
 				<select class="weight" name="weight">
 				  <option selected disabled="true">请选择</option>
-				  <?php
-				  	for ($iii=40; $iii < 100; $iii++) {
-				  		if ($weight==$iii) {
-					  		echo "<option selected value=".$iii.">".$iii."公斤</option>";
-				  		}else{
-					  		echo "<option value=".$iii.">".$iii."公斤</option>";
-				  		}
-				  	};
-				  ?>
+				  
 				</select>
 			</p>
 			<p class="info_spec"><span>收入</span>
 				<select class="income" name="income">
 				  <option selected disabled="true">请选择</option>
-				  <option value ="1千-5千" <?php if($income=='1千-5千'){echo "selected";} ?>>1千 - 5千/月</option>
-				  <option value ="5千-1万" <?php if($income=='5千-1万'){echo "selected";} ?>>5千 - 1万/月</option>
-				  <option value ="1万-3万" <?php if($income=='1万-3万'){echo "selected";} ?>>1万 - 3万/月</option>
+				  <option value ="1千-5千" >1千 - 5千/月</option>
+				  <option value ="5千-1万" >5千 - 1万/月</option>
+				  <option value ="1万-3万" >1万 - 3万/月</option>
 				</select>
 			</p>
 			<p class="info_spec"><span>住房情况</span>
 				<select class="house" name="house">
 				  <option selected disabled="true">请选择</option>
-				  <option value ="租房" <?php if($house=='租房'){echo "selected";} ?>>租房</option>
-				  <option value ="已购房" <?php if($house=='已购房'){echo "selected";} ?>>已购房</option>
-				  <option value ="单位宿舍" <?php if($house=='单位宿舍'){echo "selected";} ?>>单位宿舍</option>
-				  <option value ="和家人同住" <?php if($house=='和家人同住'){echo "selected";} ?>>和家人同住</option>
+				  <option value ="租房" >租房</option>
+				  <option value ="已购房" >已购房</option>
+				  <option value ="单位宿舍" >单位宿舍</option>
+				  <option value ="和家人同住" >和家人同住</option>
 				</select>
 			</p>
 			<p class="info_spec">
-				手机号公开：<label class="tel_show" for="show_telephone">显示</label><input type="radio" name="public_telephone" id="show_telephone" value="0" <?php if($public_telephone==0){echo "checked";} ?>>
-						  <label class="tel_hide" for="hide_telephone">隐藏</label><input type="radio" name="public_telephone" id="hide_telephone" value="1" <?php if($public_telephone==1){echo "checked";} ?> />
+				手机号公开：<label class="tel_show" for="show_telephone">显示</label><input type="radio" name="public_telephone" id="show_telephone" value="0" />
+						  <label class="tel_hide" for="hide_telephone">隐藏</label><input type="radio" name="public_telephone" id="hide_telephone" value="1"  />
 			</p>
 			<p class="info_spec" style="border-top:1px solid #efefef;padding:10px 0"><a href="pwd.php" class="pwd">修改密码</a></p>
 			<p style="text-align:center;"><input type="submit" class="update" value="保存"></p>
 		</form>
 	</div>
 </div>
+<script src="js/jquery.js"></script>
 <script type="text/javascript" src="js/city-data.js"></script>
 <script type="text/javascript" src="js/hzw-city-picker.min.js"></script>
 <script>
@@ -350,6 +325,77 @@ $(".cateform").submit(function(){
     	$("#hzw_city_picker").css("left","0");
     });
 
+</script>
+<script>
+	//jaxa去请求数据
+	$.ajax({
+		type:"post",
+		url:"http://hongbaocun.com/m/mine_info.php",
+		async:true,
+		success:function(meg){
+			console.log(meg);
+			var obj = eval("("+meg+")");
+			$("#cityChoice").val(obj.live);
+			$("#nickname").val(obj.realname);
+			$("#wechat").val(obj.wechat);
+			$("#occupation").val(obj.occupation);
+			$(".info_spec .marry option").html(obj.marry);
+			$("#oldcityChoice").val(obj.hometown);
+			var ops = $(".info_spec .education option");
+			for(var i=0;i<ops.length;i++){
+				if(ops[i].value==obj.education){
+					ops[i].setAttribute("selected","true");
+				}
+			};
+		  	for (var i=18; i < 80; i++) {
+		  		if (obj.age==i) {
+		  			var opSed = "<option selected value="+i+">"+i+"岁</option>";
+			  		$(".info_spec .age").append(opSed);
+		  		}else{
+		  			var op = "<option value="+i+">"+i+"岁</option>";
+			  		$(".info_spec .age").append(op);
+		  		}
+		  	};
+		  	for (var i=140 ;i < 210 ; i++) {
+		  		if (obj.height==i) {
+		  			var opSed = "<option selected value="+i+">"+i+"厘米</option>";
+			  		$(".info_spec .height").append(opSed);
+		  		}else{
+		  			var op = "<option value="+i+">"+i+"厘米</option>";
+			  		$(".info_spec .height").append(op);
+		  		}
+		  	};
+		  	for (var i=40 ;i < 100 ; i++) {
+		  		if (obj.weight==i) {
+		  			var opSed = "<option selected value="+i+">"+i+"公斤</option>";
+			  		$(".info_spec .weight").append(opSed);
+		  		}else{
+		  			var op = "<option value="+i+">"+i+"公斤</option>";
+			  		$(".info_spec .weight").append(op);
+		  		}
+		  	};
+		  	var income = $(".info_spec .income option");
+		  	for(var i=0;i<income.length;i++){
+				if(income[i].value==obj.income){
+					income[i].setAttribute("selected","true");
+				}
+			};
+			var house = $(".info_spec .house option");
+		  	for(var i=0;i<house.length;i++){
+				if(house[i].value==obj.house){
+					house[i].setAttribute("selected","true");
+				}
+			};
+			if (obj.public_telephone==1) {
+				$("#hide_telephone").attr("checked","checked");
+			} else{
+				$("#show_telephone").attr("checked","checked");
+			};
+		},error:function(e){
+			alert('请求数据失败!')
+			return false;
+		}
+	});
 </script>
 </body>
 </html>
