@@ -4,26 +4,24 @@
 	<title>个人主页</title>
 	<meta charset="utf-8">
 	<link rel="stylesheet" type="text/css" href="style/public.css">
-	<link rel="stylesheet" type="text/css" href="style/header.css"/>
 	<style>
-		h1{text-align: center;font-size:18px;}
-		.wrap{max-width:700px;margin:0 auto 70px;}
-		.info{margin-top:20px}
-		.info .realname{    font-size: 18px;
+		.wrap{max-width:700px;margin:0 auto 3rem;}
+		.mine_info{margin-top:20px}
+		.mine_info .realname{
+			font-size: 18px;
 		    display: inline-block;
 		    color: #888;
 		    position: absolute;
 		    top: 5px;
 		    left: 110px;}
-		.vip{width:54px;height:20px;vertical-align:bottom;}
 
-    	.info .numid{
+    	.mine_info .numid{
     		position: absolute;
     		left:110px;
     		top:30px;
     		color:#888;
     	}
-    	.info .telephone{
+    	.mine_info .telephone{
     		position: absolute;
     		left:110px;
     		top:55px;
@@ -34,10 +32,10 @@
 		.cateform{
 			margin-left:20px;
 		}
-		.info form.open{display: block;}
-		.info_spec{height:40px;line-height:40px;background:#fff;margin:6px auto;border-bottom:1px solid #efefef;}
-		.info .info_spec input,.info select{height:40px;line-height:40px;-webkit-appearance:none;margin-right:20px;background:#fff;text-align:right;width:200px;font-size:16px;color:#555;border:none;outline: none;float:right;}
-		.info select{direction:rtl;}
+		.mine_info form.open{display: block;}
+		.mine_info .info_spec{height:40px;line-height:40px;background:#fff;margin:6px auto;border-bottom:1px solid #efefef;}
+		.mine_info .info_spec input,.mine_info select{height:40px;line-height:40px;-webkit-appearance:none;margin-right:20px;background:#fff;text-align:right;width:200px;font-size:16px;color:#555;border:none;outline: none;float:right;}
+		.mine_info select{direction:rtl;}
 
 		.marry,.age,.house,.education,.height,.weight,.income{
 	    border:1px solid #efefef;
@@ -194,9 +192,9 @@
 	</style>
 </head>
 <body>
-<div class="head">个人资料</div>
+<div class="head">基本资料</div>
 <div class="wrap">
-	<div class="info">
+	<div class="mine_info">
 		<form class="cateform"  method="post">
 			<p class="info_spec"><span>居住城市</span><input type="text" placeholder="请选择" id="cityChoice" name="live" readonly="readonly" value="" /></p>
 			<p class="info_spec"><span>昵称</span><input id="nickname" type="text" placeholder="请填写" name="realname" value="" /></p>
