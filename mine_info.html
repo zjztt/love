@@ -332,13 +332,11 @@ $(".cateform").submit(function(){
 		url:"http://hongbaocun.com/m/mine_info.php",
 		async:true,
 		success:function(meg){
-			console.log(meg);
 			var obj = eval("("+meg+")");
 			$("#cityChoice").val(obj.live);
 			$("#nickname").val(obj.realname);
 			$("#wechat").val(obj.wechat);
 			$("#occupation").val(obj.occupation);
-			$(".info_spec .marry option").html(obj.marry);
 			$("#oldcityChoice").val(obj.hometown);
 			var ops = $(".info_spec .education option");
 			for(var i=0;i<ops.length;i++){
@@ -383,6 +381,12 @@ $(".cateform").submit(function(){
 		  	for(var i=0;i<house.length;i++){
 				if(house[i].value==obj.house){
 					house[i].setAttribute("selected","true");
+				}
+			};
+			var marry = $(".info_spec .marry option");
+		  	for(var i=0;i<marry.length;i++){
+				if(marry[i].value==obj.marry){
+					marry[i].setAttribute("selected","true");
 				}
 			};
 			if (obj.public_telephone==1) {
