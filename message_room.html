@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8"/>
+	<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+	<meta name="format-detection" content="telephone=no" />
+	<title>聊天室</title>
+	<link rel="stylesheet" type="text/css" href="style/public.css"/>
+	<style>
+	body{font-size:16px;}
+	.head{position:fixed;left: 0;top: 0;width:100%;z-index:9999}
+	.head h1{color:#fff;font-size:20px;margin-right:50px;}
+	.touxiang{
+		width:50px;height:50px;border-radius:50%;vertical-align:middle;margin:0 10px
+	}
+	.chat_room_wrap{
+    overflow: auto;
+    width:100%;
+    position: absolute;
+    top: 50px;
+    right:0;
+    bottom:0;
+    left: 0;
+    margin:0 auto 50px;
+	}
+	.me{color:red}
+	.content_each{margin-bottom:20px}
+	.chat_room_wrap .time{font-size:14px;color:#999;text-align: center;background:#fff;line-height:25px;height:25px;}
+	.chat_room_wrap .content_p{line-height:49px;}
+	.chat_room_wrap .content_span{display:inline-block;background:#dbe9f7;padding:0 8px;border-radius:6px;text-align:left;}
+	.chat_form{
+		position:fixed;bottom:0;left:0;width:100%;height:40px;
+	}
+	.room_text{
+		width:78%;padding:10px;height:40px;resize:none;font-size:16px;border:none;outline:orange;box-sizing:border-box;border-top:1px solid #efefef;
+	}
+	.chat_submit{
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 22%;
+    height: 42px;
+    background: #9bc36d;
+    outline: none;
+    border: none;
+    color: #fff;
+    font-size: 16px;
+    font-weight: bolder;	}
+	.refresh{border-radius:4px;border:1px solid #50abf2;color:#fff;position:absolute;bottom:70px;left:50%;width:200px;height:50px;background:#50abf2;margin-left:-100px}
+	.clear{clear:both;}
+	.ad{width:100%;}
+	</style>
+</head>
+<body>
+	<script>
+		$(function(){
+			$('.chat_room_wrap').scrollTop($('.chat_room_wrap')[0].scrollHeight-50);
+		});
+	</script>
+	<div class="head">
+	<a href="javascript:;"style="float:left;width:50px;color:#fff"> < </a>
+	<a href='info.html'><h1>刘思琪</h1></a>
+	</div>
+	<div class="chat_room_wrap">
+		<p class='time'>76天前</p>
+		<div class='content_each'>
+				<a href="#">
+					<img class='touxiang' style='float:right' src='http://hongbaocun.com/m/upload/15077/1468035536_50.jpg'>
+				</a>
+				<p style='text-align:right;'  class='content_p'>
+					<span class='content_span'>你好</span>
+				</p>
+				<a href='#'>
+					<img class='touxiang' style='float:left' src='http://hongbaocun.com/m/upload_img/20160730/21032_50.jpg'>
+				</a>
+				<p style='text-align:left;'  class='content_p'>
+					<span class='content_span'>你好</span>
+				</p>
+		</div>
+		<div class='clear'></div>
+	</div>
+	<form class='chat_form' action="chat_room_handle.php" method="POST">
+		<textarea class="room_text" name="content" rows="1" placeholder="开始聊天吧！" required></textarea>
+		<input class="chat_submit" type="submit" value="发送">
+		<input type="hidden" value="<?php echo $youid ?>" name="youid">
+	</form>
+</body>
+</html>
