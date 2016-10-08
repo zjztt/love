@@ -41,7 +41,7 @@
 
 	<a class="cate lucky" href="luck.html"><img src="pic/lucky1.png"><span class="cate_span"><img src="pic/arrow.png" class="cate_arrow"></span><i>缘分</i></a>
 	<a class="cate" href="vip.html"><img src="pic/vip.png"><span class="cate_span"><img src="pic/arrow.png" class="cate_arrow"></span><i>VIP会员</i></a>
-	<a class="cate" href="loginout.html"><img src="pic/out.png"><span class="cate_span"><img src="pic/arrow.png" class="cate_arrow"></span><i>退出</i></a>
+	<a class="cate" class="loginout"><img src="pic/out.png"><span class="cate_span"><img src="pic/arrow.png" class="cate_arrow"></span><i>退出</i></a>
 </div>
 <div class="foot"><a href="all.html"><img src="pic/home.png"><i>首页</i></a><a href="city.html"><img src="pic/live.png"><i>同城</i></a><a href="message.html"><img src="pic/chat_list.png"><i>消息</i></a><a href="mine.html"><img src="pic/person1.png"><i>我的</i></a></div>
 
@@ -97,6 +97,18 @@ hammertime.on('swiperight', function(ev) {
 		},error:function(e){
 		}
 	});
+		//退出登录
+		
+		$(".loginout").click(function(){
+    		setCookie('id', "", -1);
+			window.location.href="login.html";
+		});
+		//用户名存到cookie
+		function setCookie(name,value, iDay){
+			var oDate = new Date();
+			oDate.setDate(oDate.getDate()+iDay);
+			document.cookie=name+'='+value+';expires='+oDate;
+		}
 </script>
 <div class="zhe" style="display:none;"><h2 style="text-align:center;margin:70% auto;color:#fff">图片正在上传,请勿任何操作</h2></div>
         <script type="text/javascript" src="cordova.js"></script>

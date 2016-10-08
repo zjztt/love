@@ -4,7 +4,7 @@
 	<title>个人主页</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
-	<link rel="stylesheet" type="text/css" href="style/footer.css"/>
+	<link rel="stylesheet" type="text/css" href="style/public.css"/>
 	<style>
 		*{margin:0;padding: 0;}
 		.info{margin:0 auto 60px;}
@@ -96,9 +96,9 @@
 		</div>
 </div>
 	<div class="foot">
-		<a class='likea'><input type="hidden" class="get_id" value=""><img class="like" src="images/like_pre.png" /><i>心动</i></a>
-		<a><img src="images/report.png" alt=""><i>举报</i></a>
-		<a href=""><img src="images/chat_list.png" alt=""><i>聊天</i></a>
+		<a class='likea'><input type="hidden" class="get_id" value=""><img class="like" src="pic/like_pre.png" /><i>心动</i></a>
+		<a><img src="pic/report.png" alt=""><i>举报</i></a>
+		<a href=""><img src="pic/chat_list.png" alt=""><i>聊天</i></a>
 	</div>
 <img src="" class="big_img">
 <div class="zhe"></div>
@@ -109,7 +109,7 @@ $(".likea").click(function(){
 		alert("您已喜欢过");
 	}else{
 		$(".like_num").text(parseInt($(".like_num").text())+1);
-		$(this).find(".like").attr("src","images/liked_before.png");
+		$(this).find(".like").attr("src","pic/liked_before.png");
 		$(this).find(".like").addClass("good_btn liked like_good_btn");
 		$.ajax({
 			url:'lucky_handle.php',
@@ -138,8 +138,15 @@ $(".likea").click(function(){
 		$(".zhe").hide();
 		$(".info,.foot").show();
 	});
+
 </script>
 <script type="text/javascript">
+function getQueryString(name) { 
+	var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i"); 
+	var r = window.location.search.substr(1).match(reg); 
+	if (r != null) return unescape(r[2]); return null; 
+} 
+console.log(getQueryString("id"));
 	$.ajax({
 		url:'http://hongbaocun.com/m/info.php',
 		type:'post',

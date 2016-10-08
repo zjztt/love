@@ -42,7 +42,7 @@
 	</style>
 </head>
 <body>
-	<h1 class="index_logo"><img src="img/logo.png"></h1>
+	<h1 class="index_logo"><img src="pic/logo.png"></h1>
 	<div id="login_form">
 		<input type="tel" id='telephone' name="telephone" placeholder="手机号">
 		<input type="password" id="password" name="password" placeholder="密码">
@@ -66,17 +66,17 @@
 					dataType:'json',
 					data: {telephone:telephone, password:password},
 					success:function(data){
-								//登录成功
-							if (data==1) {
-								setCookie(phone,telephone,60);
+							//登录成功
+							if (typeof(data)=='number') {
+								setCookie('id',data,60);
 								window.location.href='all.html';
-							} else if(data==2){
+							} else if(data=='black'){
 								//账号被封
 								alert("账号已封，请加微信:hunlian21");
-							}else if(data==4){
+							}else if(data=='tel_null'){
 								//手机号未填写
 								alert("手机号未填写");
-							}else if(data==5){
+							}else if(data=='pass_null'){
 								//密码未填写
 								alert("密码未填写");
 							} else{
@@ -89,12 +89,13 @@
 				});
 			}
 		});
-		//用户名存在cookie
+		//用户名存到cookie
 		function setCookie(name,value, iDay){
 			var oDate = new Date();
 			oDate.setDate(oDate.getDate()+iDay);
 			document.cookie=name+'='+value+';expires='+oDate;
 		}
+		
 		function getCookie(name){
 			var arr=document.cookie.split('; ');
 			for (var i = 0; i < arr.length; i++) {
