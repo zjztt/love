@@ -35,7 +35,8 @@
 	    缘分详情处理：luck.php
 
 <h3>数据库结构：</h3>
-login表：	id,telephone,password,realname,
+login表：	
+id,telephone,password,realname,
 time,wechat,age,marry,nation,live,hometown,
 education,height,weight,occupation,income,house,
 gender,touxiang,authentication,public_telephone,
