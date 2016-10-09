@@ -7,8 +7,8 @@
 	<title>聊天室</title>
 	<link rel="stylesheet" type="text/css" href="style/public.css"/>
 	<style>
-	body{font-size:16px;}
-	.head{position:fixed;left: 0;top: 0;width:100%;z-index:9999}
+	body{font-size:16px;height: 100%;}
+	.head{width:100%;}
 	.head h1{color:#fff;font-size:20px;margin-right:50px;}
 	.touxiang{
 		width:50px;height:50px;border-radius:50%;vertical-align:middle;margin:0 10px
@@ -16,28 +16,51 @@
 	.chat_room_wrap{
     overflow: auto;
     width:100%;
-    position: absolute;
-    top: 50px;
-    right:0;
-    bottom:0;
-    left: 0;
     margin:0 auto 50px;
 	}
 	.me{color:red}
 	.content_each{margin-bottom:20px}
 	.chat_room_wrap .time{font-size:14px;color:#999;text-align: center;background:#fff;line-height:25px;height:25px;}
+	@media only screen and (max-width:414px ) {
+		.chat_room_wrap .content_p{
+			max-width:330px;
+		}
+	}
+	@media only screen  and (max-width: 320px) {
+		.chat_room_wrap .content_p{
+			max-width:242px;
+		}
+	}
+	@media only screen and (min-width: 321px) and (max-width: 375px) {
+		.chat_room_wrap .content_p{
+			max-width:292px;
+		}
+	}
+	@media only screen and (min-width: 415px) and (max-width: 500px) {
+		.chat_room_wrap .content_p{
+			max-width:384px;
+		}
+	}
+	@media only screen and (min-width: 600px) and (max-width: 708px) {
+		.chat_room_wrap .content_p{
+			max-width:610px;
+		}
+	}
+	@media only screen and (min-width: 755px) and (max-width: 1360px) {
+		.chat_room_wrap .content_p{
+			max-width:630px;
+		}
+	}
 	.chat_room_wrap .content_p{line-height:49px;}
 	.chat_room_wrap .content_span{display:inline-block;background:#dbe9f7;padding:0 8px;border-radius:6px;text-align:left;}
 	.chat_form{
-		position:fixed;bottom:0;left:0;width:100%;height:40px;
+		position:fixed;bottom:0;width:700px;height:40px;margin: 0 auto;
 	}
 	.room_text{
 		width:78%;padding:10px;height:40px;resize:none;font-size:16px;border:none;outline:orange;box-sizing:border-box;border-top:1px solid #efefef;
 	}
 	.chat_submit{
     position: absolute;
-    top: 0;
-    right: 0;
     width: 22%;
     height: 42px;
     background: #9bc36d;
