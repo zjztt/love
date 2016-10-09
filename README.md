@@ -35,5 +35,12 @@
 	    缘分详情处理：luck.php
 
 <h3>数据库结构：</h3>
-	login表：
-	
+login表：	
+id,telephone,password,realname,
+time,wechat,age,marry,nation,live,hometown,
+education,height,weight,occupation,income,house,
+gender,touxiang,authentication,public_telephone,
+vip_time(vip开通时间),black(是否拉黑的意思),idcard(身份证号),
+small_touxiang(小头像),block,last_ip(最后登录ip),hege(合格的才显示出来，
+不合格的进入到审核系统),identity_img(身份证照片),identity_hege(身份证是否合格),
+identity_time(身份证认证时间)
