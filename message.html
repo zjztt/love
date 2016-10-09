@@ -1,27 +1,51 @@
 <!DOCTYPE html>
 <html lang="zh">
 <head>
-	<title>全国</title>
+	<title>聊天室列表</title>
+	<style>
+	.ad{display:none}
+	.ad img{width:100%;vertical-align:bottom;}
+	.wrap{margin-bottom:70px;background:#fff}
+	.wrap a{font-size:16px;height:60px;line-height:60px;display:block;margin-bottom:4px;border-bottom:1px solid #efefef;padding:10px;text-decoration: none;color:#555;position: relative;}
+	.wrap img{width:60px;height:60px;}
+	.nickname{position: absolute;top:-10px;left:80px;width:76%}
+	.time{font-size:13px;color:#888;float:right;}
+	.content{position: absolute;bottom:-5px;left:80px;color:#888;font-size:14px;margin-bottom: 0px!important;}
+	</style>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
 	<meta name="format-detection" content="telephone=no">
 	<link rel="stylesheet" type="text/css" href="style/public.css">
-	<link rel="stylesheet" type="text/css" href="style/header.css"/>
-	<link rel="stylesheet" type="text/css" href="style/footer.css"/>
 	<script type="text/javascript" src="js/jquery.js"></script>
 	<script type="text/javascript" src="js/hammer.min.js"></script>
 </head>
 <body id="body">
 <div class="head">消息</div>
-<div class="content">
-<ul class="ul">
-	
-</ul>
-</div>
-
+	<div class="wrap">
+		<a href='message_room.html'>
+			<img src="http://www.hongbaocun.com/m/upload/19297/1468652052_50.jpg">
+			<div class='nickname'>傲气与我同生
+				<time class='time'>65天前</time>
+			</div>
+			<span class='content'>这上面聊天不得劲，加QQ聊吧</span>
+		</a>
+		<a href='message_room.html'>
+			<img src="http://www.hongbaocun.com/m/upload/19297/1468652052_50.jpg">
+			<div class='nickname'>傲气与我同生
+				<time class='time'>65天前</time>
+			</div>
+			<span class='content'>这上面聊天不得劲，加QQ聊吧</span>
+		</a>
+		<a href='message_room.html'>
+			<img src="http://www.hongbaocun.com/m/upload/19297/1468652052_50.jpg">
+			<div class='nickname'>傲气与我同生
+				<time class='time'>65天前</time>
+			</div>
+			<span class='content'>这上面聊天不得劲，加QQ聊吧</span>
+		</a>
+	</div>
 <div class="foot"><a href="all.html"><img src="pic/home.png"><i>首页</i></a><a href="city.html"><img src="pic/live.png"><i>同城</i></a><a href="message.html"><img src="pic/chat_list1.png"><i>消息</i></a><a href="mine.html"><img src="pic/person.png"><i>我的</i></a></div>
 <script>
-
 	$.ajax({
 		url:'http://hongbaocun.com/m/message.php',
 		type:'get',
@@ -39,7 +63,6 @@
 				$(".ul").append(li);
 				console.log(a.age+a.live+a.education+a.marry);			
 			};
-
 		},error:function(e){
 			console.log(e);
 		}

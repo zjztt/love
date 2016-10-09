@@ -108,6 +108,9 @@
 		}
 		var telephone=document.getElementById('telephone');
 		telephone.value=getCookie('phone');
+		if (telephone.value!=""){
+			window.location.href='all.html';
+		}
 	}
 	</script>
 </body>

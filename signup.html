@@ -3,7 +3,7 @@
 <head>
 	<meta charset="UTF-8"/>
 	<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
-
+	<meta name="format-detection" content="telephone=no"/>
 	<title>用户注册</title>
 	<style>
 		html,body{font-size:16px;animation: bg 10s infinite;-webkit-animation: bg 10s infinite;}
@@ -49,6 +49,7 @@
 		<input type="submit" id="submit" value="注册"><br>
 		<a class="back" onclick="window.history.back()">返回登录</a>
 	</form>
+	<script src="js/jquery.js" ></script>
 	<script type="text/javascript">
 		$("#login_form").submit(function(){
 		    var phone = document.getElementById('telephone').value;
