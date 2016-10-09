@@ -75,7 +75,11 @@
     };
     ajax();
     var b = 2;
-    $(".pagea").click(function(){
+    var ok= 0;
+
+    $(window).bind("scroll",function(){
+        if(document.body.scrollTop + $(window).height() + 800 > $(document).height()&&ok==0){
+            ok =1;
        $.ajax({
             url:'http://hongbaocun.com/m/all.php?page='+b+'',
             type:'get',
@@ -95,13 +99,15 @@
                     
                     $(".ul").append(li);
                 };
-                b = b+1;
+                b++;
+                ok=0;
                 $(".page_num").text("当前页为:"+b+"");
 
             },error:function(e){
                 console.log(e);
             }
-        });    });
+        });
+}});
 </script>
 <script type="text/javascript">
 var hammertime = new Hammer(document.getElementById('body'));
