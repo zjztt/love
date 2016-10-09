@@ -41,20 +41,21 @@
 	</style>
 </head>
 <body>
-	<form id="login_form" action="register_handle.php" method="POST">
+	<div id="login_form">
 		<input type="tel" name="telephone" id='telephone' class="telephone" placeholder="手机号">
 		<input type="password" name="password" id="password" class="password" placeholder="密码">
 		<input type="text" name="nickname" id="nickname" class="nickname" placeholder="昵称">
 		<label class='label_male' for="male">男</label><input type="radio" name="gender" id="male" value="1" class='sex' checked="checked"><input class='sex' type="radio" name="gender" id="female" value="0"/><label class='label_female' for="female">女</label><br>
 		<input type="submit" id="submit" value="注册"><br>
 		<a class="back" onclick="window.history.back()">返回登录</a>
-	</form>
+	</div>
 	<script src="js/jquery.js" ></script>
 	<script type="text/javascript">
-		$("#login_form").submit(function(){
+		$("#submit").click(function(){
 		    var phone = document.getElementById('telephone').value;
 		    var password = document.getElementById('password').value;
 		    var nickname = document.getElementById('nickname').value;
+		    var gender='男';
 		    if(!(/^1[3|4|5|7|8]\d{9}$/.test(phone))){ 
 		        alert("手机号码有误，请重填");  
 		        return false;
@@ -71,12 +72,29 @@
 		        alert("填写昵称过长，请缩短点");  
 		        return false; 
 		    }
+			$.ajax({
+				type:"post",
+				url:"http://hongbaocun.com/m/signup.php",
+				async:true,
+				data:{telephone:phone,password:password,nickname:nickname,gender:gender},
+				success:function(data){
+					if (data==1) {
+						alert(恭喜注册成功);
+					}else if(data==2){
+						alert(你已经注册过了);
+					}else{
+						alert(注册失败,请重试);
+					}
+				}
+			});
 		});
 		$("#male").on("click",function(){
 			$(this).prev("label").css({"background":"#abcdef","color":"#fff"}).siblings("label").css({"background":"#efefef","color":"#000","border":"none"});
+			gender='男';
 		});
 		$("#female").on("click",function(){
 			$(this).next("label").css({"background":"#c03f3c","color":"#fff"}).siblings("label").css({"background":"#efefef","color":"#000","border":"none"});
+			gender='女';
 		});
 	</script>
 </body>
