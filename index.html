@@ -40,36 +40,68 @@
 <div class="head">全国</div>
 <div class="content">
     <ul class="ul"></ul>
+    <div class="page">
+        <div class="page_num"></div>
+        <a class='pagea'>加载更多</a>
+    </div>
 </div>
 
 <div class="foot"><a href="all.html"><img src="pic/home1.png"><i>首页</i></a><a href="city.html"><img src="pic/live.png"><i>同城</i></a><a href="message.html"><img src="pic/chat_list.png"><i>消息</i></a><a href="mine.html"><img src="pic/person.png"><i>我的</i></a></div>
 <script>
-
-    $.ajax({
-        url:'http://hongbaocun.com/m/all.php',
-        type:'get',
-        dataType:'json',
-        success:function(data){
-            for (var i= 0; i < data.length; i++) {
-                a = JSON.parse(data[i]);
-                touxiang = "<img class='touxiang' src='http://hongbaocun.com/m/"+a.touxiang+"'>";
-                nickname= "<p class='nickname'>"+a.nickname+"</p>";
-                time="<span class='time'>"+a.time+"</span>";
-                if (a.age!='') {
-                    a.age=a.age+'岁';
+    function ajax(){
+        $.ajax({
+            url:'http://hongbaocun.com/m/all.php',
+            type:'get',
+            dataType:'json',
+            success:function(data){
+                for (var i= 0; i < data.length; i++) {
+                    a = JSON.parse(data[i]);
+                    touxiang = "<img class='touxiang' src='http://hongbaocun.com/m/"+a.touxiang+"'>";
+                    nickname= "<p class='nickname'>"+a.nickname+"</p>";
+                    time="<span class='time'>"+a.time+"</span>";
+                    if (a.age!='') {
+                        a.age=a.age+'岁';
+                    };
+                    other="<span class='other'>"+a.live+' '+a.age+' '+a.education+"</span>";
+                    right = "<div class='right'>"+nickname+time+other+"</div>";
+                    li = "<li class='li_detial'><a class='li_detial_a' href='info.html?id="+a.id+"'>"+touxiang+right+"</a></li>";
+                    $(".ul").append(li);
                 };
-                other="<span class='other'>"+a.live+' '+a.age+' '+a.education+"</span>";
-                right = "<div class='right'>"+nickname+time+other+"</div>";
-                li = "<li class='li_detial'><a class='li_detial_a' href='info.html?id="+a.id+"'>"+touxiang+right+"</a></li>";
-                
-                $(".ul").append(li);
-            };
+                $(".page_num").text("当前页为:"+a.num+"");
+            },error:function(e){
+                console.log(e);
+            }
+        });
+    };
+    ajax();
+    var b = 2;
+    $(".pagea").click(function(){
+       $.ajax({
+            url:'http://hongbaocun.com/m/all.php?page='+b+'',
+            type:'get',
+            dataType:'json',
+            success:function(data){
+                for (var i= 0; i < data.length; i++) {
+                    a = JSON.parse(data[i]);
+                    touxiang = "<img class='touxiang' src='http://hongbaocun.com/m/"+a.touxiang+"'>";
+                    nickname= "<p class='nickname'>"+a.nickname+"</p>";
+                    time="<span class='time'>"+a.time+"</span>";
+                    if (a.age!='') {
+                        a.age=a.age+'岁';
+                    };
+                    other="<span class='other'>"+a.live+' '+a.age+' '+a.education+"</span>";
+                    right = "<div class='right'>"+nickname+time+other+"</div>";
+                    li = "<li class='li_detial'><a class='li_detial_a' href='info.html?id="+a.id+"'>"+touxiang+right+"</a></li>";
+                    
+                    $(".ul").append(li);
+                };
+                b = b+1;
+                $(".page_num").text("当前页为:"+b+"");
 
-        },error:function(e){
-            console.log(e);
-        }
-    });
-
+            },error:function(e){
+                console.log(e);
+            }
+        });    });
 </script>
 <script type="text/javascript">
 var hammertime = new Hammer(document.getElementById('body'));
