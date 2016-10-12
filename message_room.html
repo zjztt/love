@@ -54,7 +54,7 @@
 	.chat_room_wrap .content_p{line-height:49px;}
 	.chat_room_wrap .content_span{display:inline-block;background:#dbe9f7;padding:0 8px;border-radius:6px;text-align:left;}
 	.chat_form{
-		position:fixed;bottom:0;width:700px;height:40px;margin: 0 auto;
+		position:fixed;bottom:0;max-width:700px;height:40px;margin: 0 auto;width: 100%;
 	}
 	.room_text{
 		width:78%;padding:10px;height:40px;resize:none;font-size:16px;border:none;outline:orange;box-sizing:border-box;border-top:1px solid #efefef;
@@ -68,7 +68,8 @@
     border: none;
     color: #fff;
     font-size: 16px;
-    font-weight: bolder;	}
+    font-weight: bolder;
+    }
 	.refresh{border-radius:4px;border:1px solid #50abf2;color:#fff;position:absolute;bottom:70px;left:50%;width:200px;height:50px;background:#50abf2;margin-left:-100px}
 	.clear{clear:both;}
 	.ad{width:100%;}
@@ -81,8 +82,8 @@
 		});
 	</script>
 	<div class="head">
-	<a href="javascript:;"style="float:left;width:50px;color:#fff"> < </a>
-	<a href='info.html'><h1>刘思琪</h1></a>
+		<a href="javascript:;"style="float:left;width:50px;color:#fff"> &lt; </a>
+		<a href='info.html'><h1>刘思琪</h1></a>
 	</div>
 	<div class="chat_room_wrap">
 		<p class='time'>76天前</p>
@@ -102,10 +103,10 @@
 		</div>
 		<div class='clear'></div>
 	</div>
-	<form class='chat_form' action="chat_room_handle.php" method="POST">
+	<div class='chat_form'>
 		<textarea class="room_text" name="content" rows="1" placeholder="开始聊天吧！" required></textarea>
 		<input class="chat_submit" type="submit" value="发送">
-		<input type="hidden" value="<?php echo $youid ?>" name="youid">
-	</form>
+		<input type="hidden" value="" name="youid">
+	</div>
 </body>
 </html>
