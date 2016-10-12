@@ -5,7 +5,7 @@
 	注册：signup.html
 	资料详情:info.html
 
-	首页：all.html
+	首页：index.html
 	同城：city.html
 	朋友圈：friend.html
 	消息：message.html
